@@ -44,7 +44,6 @@ class_names_tomato = ['Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomat
 class_names_potato = ['Potato___Early_blight', 'Potato___healthy', 'Potato___Late_blight']
 class_names_corn = ['Corn___Cercospora_leaf_spot Gray_leaf_spot', 'Corn___Common_rust', 'Corn___healthy', 'Corn___Northern_Leaf_Blight']
 class_names_apple = ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
-
 # Make predictions over new image
 def model_predict(img_path, model, class_names, img_dims):
 
@@ -58,8 +57,9 @@ def model_predict(img_path, model, class_names, img_dims):
     predictions = model.predict(img_array)
     score = softmax(predictions[0])
 
+   
     return "This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
-
+    
 
 @app.route('/')
 def home():
@@ -112,6 +112,11 @@ def upload():
 def team():
     return render_template('team.html')
 
+
+@app.route('/resources')
+def resources():
+    return render_template('resources.html')
+    
 
 if __name__ == '__main__':
     app.run()
