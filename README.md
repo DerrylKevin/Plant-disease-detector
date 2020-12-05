@@ -7,14 +7,10 @@ If you are trying to clone this project and run it locally make sure that you al
 The "models" directory should contain all the necessary models which you can find here: https://drive.google.com/drive/folders/1FlgtY0Fuw14ZNL6JiAL5eBioa4U4_3Av?usp=sharing
 
 Necessary installations:
-
+```
 pip3 install Flask
-
 pip3 install Flask-WTF
-
 pip3 install tensorflow
-
 pip3 install Pillow
-
 pip3 install gevent
-
+```
